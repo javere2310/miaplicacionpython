@@ -1,2 +1,4 @@
-env1
-__pycache__
+env1/
+minuevoproyecto/__pycache__/
+Aplicaciones/Academico/__pycache__/
+Aplicaciones/Anotaciones/__pycache__/
