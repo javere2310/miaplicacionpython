@@ -1,0 +1,59 @@
+{% extends "./base.html" %}
+
+{% block title %} Gestión de cursos {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <h2>Filtros de búsqueda</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/academico/consultacf/">
+                    <!-- <div class="form-group">
+                        <input type="text" id="txtcodigo" name="txtcodigo" class="form-control"
+                            placeholder="Código" minlength="6" maxlength="6" required>
+                    </div> -->
+                    <div class="form-group">
+                        <input type="text" id="txtCF" name="txtCF" class="form-control"
+                            value="{{ txtCF }}"
+                            placeholder="Nombre" maxlength="10">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtCliente" name="txtCliente" class="form-control"
+                            value="{{ txtCliente }}"
+                            placeholder="Cliente" maxlength="50">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <div class="table-responsive py-2">
+            <table class="table table-striped table-scroll">
+                <thead class="thead-stickly thead-primary">
+                    <tr>
+                        <th class="w-10">Nro CF</th>
+                        <th class="w-70 text-left">Cliente</th>
+                        <th class="w-20">Fecha Emisión</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in listacf %}
+                    <tr>
+                        <td class="w-10">{{c.codcfi}}</td>
+                        <td class="w-70 text-left">{{c.nomcli}}</td>
+                        <td class="w-20">{{c.fecemi}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
